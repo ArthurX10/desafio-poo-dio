@@ -1,11 +1,22 @@
 package br.com.dio.desafio.dominio;
 
+import java.time.LocalDate;
+
 public abstract class Conteudo {
 
     protected static final double XP_PADRAO = 10d;
     private String descricao;
     private String titulo;
+    protected LocalDate dataConclusao;
 
+
+    public LocalDate getDataConclusao() {
+        return dataConclusao;
+    }
+
+    public void setDataConclusao(LocalDate dataConclusao) {
+        this.dataConclusao = dataConclusao;
+    }
 
     public abstract double calcularXp();
 
@@ -24,4 +35,6 @@ public abstract class Conteudo {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public abstract void calcularDataConclusao(int diasParaTerminar);
 }

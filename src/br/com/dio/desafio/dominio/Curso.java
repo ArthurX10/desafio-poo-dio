@@ -1,5 +1,7 @@
 package br.com.dio.desafio.dominio;
 
+import java.time.LocalDate;
+
 public class Curso extends Conteudo{
 
     private int cargaHoraria;
@@ -7,6 +9,11 @@ public class Curso extends Conteudo{
     @Override
     public double calcularXp() {
         return XP_PADRAO * cargaHoraria;
+    }
+
+    @Override
+    public void calcularDataConclusao(int diasParaTerminar) {
+        this.dataConclusao = LocalDate.now().plusDays(diasParaTerminar);
     }
 
     public Curso() {
